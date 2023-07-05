@@ -18,6 +18,7 @@ export const TaskForm = () => {
         type="text"
         name="text"
         placeholder="Enter task text..."
+        autoComplete="off"
       />
       <button type="submit">Add task</button>
     </form>
