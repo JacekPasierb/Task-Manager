@@ -1,0 +1,7 @@
+.wrapper {
+  display: flex;
+  gap: 4px;
+}
+.selected {
+  background-color: rgb(250, 234, 7);
+}

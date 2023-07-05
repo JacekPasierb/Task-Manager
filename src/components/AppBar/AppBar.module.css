@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 90vw;
+  background: linear-gradient(to bottom, #ff4e50, #f9d423);
+  padding: 20px;
+  justify-content: space-between;
+}
+.section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.sectionTask {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+}
+.filterBox,
+.counterBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
