@@ -1,25 +1,21 @@
 import { Layout } from "./Layout/Layout";
-import { AppBar } from "./AppBar/AppBar";
-import { TaskList } from "./TaskList/TaskList";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTasks } from "../redux/operations";
-import { getError, getIsLoading } from "../redux/selectors";
+
+import { Routes, Route } from "react-router-dom";
+import { HomePage } from "../pages/HomePage";
+import { LoginPage } from "../pages/LoginPage";
+import { RegisterPage } from "../pages/RegisterPage";
+import { TasksPage } from "../pages/TasksPage";
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
-
-  useEffect(() => {
-    dispatch(fetchTasks());
-  }, [dispatch]);
   return (
-    <Layout>
-      <AppBar />
-      {isLoading && !error && <b>Request in progress...</b>}
-      <TaskList />
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="tasks" element={<TasksPage />} />
+      </Route>
+    </Routes>
   );
 };
 
