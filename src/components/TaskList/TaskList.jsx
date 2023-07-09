@@ -19,11 +19,10 @@ export const TaskList = () => {
   const tasks = useSelector(getTasks);
   const statusFilter = useSelector(getStatusFilter);
   const visibleTasks = getVisibleTasks(tasks, statusFilter);
-console.log("v",tasks);
+
   return (
     <ul className={css.list}>
-          {visibleTasks.map((task) => (
-         
+      {visibleTasks.map((task) => (
         <li className={css.listItem} key={task.id}>
           <Task task={task} />
         </li>
