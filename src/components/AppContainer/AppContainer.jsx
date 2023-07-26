@@ -19,7 +19,7 @@ export const AppContainer = () => {
         >
           <Navigation />
           {isLoggedIn ? (
-            <div>
+            <div >
               <UserMenu />
             </div>
           ) : (
