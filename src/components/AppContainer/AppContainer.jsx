@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useAuth } from "../../hooks/useAuth";
 import { AuthNav } from "../AuthNav/AuthNav";
@@ -19,7 +12,10 @@ export const AppContainer = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar
-          sx={{ justifyContent: "space-between", backgroundColor: "lightgreen" }}
+          sx={{
+            justifyContent: "space-between",
+            backgroundColor: "lightgreen",
+          }}
         >
           <Navigation />
           {isLoggedIn ? (
@@ -28,7 +24,6 @@ export const AppContainer = () => {
             </div>
           ) : (
             <div>
-              {" "}
               <AuthNav />
             </div>
           )}

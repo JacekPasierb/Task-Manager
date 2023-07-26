@@ -13,10 +13,12 @@ export const TasksPage = () => {
     dispatch(fetchTasks());
   }, [dispatch]);
   return (
-    <div>
+    <main
+     style={{padding:"50px"}}
+    >
       <AppBar />
       {isLoading && "In progress..."}
       <TaskList />
-    </div>
+    </main>
   );
 };

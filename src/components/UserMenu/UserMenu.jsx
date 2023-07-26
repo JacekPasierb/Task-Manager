@@ -10,7 +10,7 @@ export const UserMenu = () => {
   const { user } = useAuth();
   return (
     <div className={css.wrapper}>
-      <Typography variant="h6">Welcome , {user.email} </Typography>
+      <Typography variant="h6">Welcome , {user.name} </Typography>
       <Button
         variant="outlined"
         startIcon={<LogoutIcon />}

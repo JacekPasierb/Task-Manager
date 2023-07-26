@@ -3,6 +3,7 @@ import css from "./StatusFilter.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { statusFilters } from "../../redux/constants";
 import { setStatusFilter } from "../../redux/filtersSlice";
+import { Button, ButtonGroup } from "@mui/material";
 
 export const StatusFilter = () => {
   const dispatch = useDispatch();
@@ -13,26 +14,26 @@ export const StatusFilter = () => {
   };
 
   return (
-    <div className={css.wrapper}>
-      <button
-        className={filter === statusFilters.all ? css.selected : ""}
+    <ButtonGroup sx={{backgroundColor:"white"}} aria-label="outlined button group" color="success">
+      <Button
+        variant={filter === statusFilters.all ? "contained" : "outlined"}
         onClick={() => handleFilterChange(statusFilters.all)}
       >
         All
-      </button>
-      <button
-        className={filter === statusFilters.active ? css.selected : ""}
+      </Button>
+      <Button
+        variant={filter === statusFilters.active ? "contained" : "outlined"}
         onClick={() => handleFilterChange(statusFilters.active)}
       >
         Active
-      </button>
-      <button
-        className={filter === statusFilters.completed ? css.selected : ""}
+      </Button>
+      <Button
+        variant={filter === statusFilters.completed ? "contained" : "outlined"}
         onClick={() => handleFilterChange(statusFilters.completed)}
       >
         Completed
-      </button>
-    </div>
+      </Button>
+    </ButtonGroup>
   );
 };
 export default StatusFilter;
