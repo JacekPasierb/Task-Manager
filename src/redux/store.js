@@ -4,7 +4,14 @@ import { filtersReducer } from "./filtersSlice";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage"
 import { authReducer } from "./auth/silce";
-
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
 const authPersistConfig  = {
   key: `auth`,
