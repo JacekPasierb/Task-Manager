@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar } from "@mui/material";
+import { AppBar, Box, Toolbar, useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useAuth } from "../../hooks/useAuth";
 import { AuthNav } from "../AuthNav/AuthNav";
@@ -8,13 +8,18 @@ import css from "./AppContainer.module.css";
 
 export const AppContainer = () => {
   const { isLoggedIn } = useAuth();
+  const theme = useTheme();
+  const isTablet = useMediaQuery(theme.breakpoints.up("md"));
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar
           sx={{
-            justifyContent: "space-between",
+            display: "flex",
+            flexDirection: isTablet ? "row" : "column",
+            justifyContent: "center",
             backgroundColor: "lightgreen",
+            
           }}
         >
           <Navigation />
