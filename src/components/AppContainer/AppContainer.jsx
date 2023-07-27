@@ -17,7 +17,7 @@ export const AppContainer = () => {
           sx={{
             display: "flex",
             flexDirection: isTablet ? "row" : "column",
-            justifyContent: "center",
+            justifyContent: isTablet ? "center" : "space-between",
             backgroundColor: "lightgreen",
             padding:"10px",
             
