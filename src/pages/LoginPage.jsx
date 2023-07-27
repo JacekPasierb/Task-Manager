@@ -53,7 +53,16 @@ export const LoginPage = () => {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs" sx={{backgroundColor:"white", marginTop:"15px", padding:"5px", borderRadius:"5px"}}>
+      <Container
+        component="main"
+        maxWidth="xs"
+        sx={{
+          backgroundColor: " rgba(250, 235, 215, 0.801)",
+          marginTop: "15px",
+          padding: "5px",
+          borderRadius: "5px",
+        }}
+      >
         <CssBaseline />
         <Box
           sx={{
