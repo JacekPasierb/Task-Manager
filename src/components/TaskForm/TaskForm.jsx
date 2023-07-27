@@ -15,7 +15,7 @@ export const TaskForm = () => {
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <TextField
-        sx={{ backgroundColor: " rgba(250, 235, 215, 0.801)" }}
+        
         name="text"
         type="text"
         placeholder="Enter task text..."
