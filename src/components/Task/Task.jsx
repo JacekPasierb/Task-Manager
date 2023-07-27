@@ -1,7 +1,9 @@
 import { useDispatch } from "react-redux";
-import { MdClose } from "react-icons/md";
 import css from "./Task.module.css";
 import { deleteTask, toggleCompleted } from "../../redux/operations";
+import { Checkbox, Typography } from "@mui/material";
+import { Favorite, FavoriteBorder } from "@mui/icons-material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();
@@ -12,11 +14,18 @@ export const Task = ({ task }) => {
 
   return (
     <div className={css.wrapper}>
-      <input type="checkbox" checked={task.completed} onChange={handleToggle} />
+      <Checkbox
+        icon={<FavoriteBorder />}
+        checkedIcon={<Favorite />}
+        checked={task.completed}
+        onChange={handleToggle}
+      />
 
-      <p className={css.text}>{task.text}</p>
+      <Typography variant="h5" component="h2">
+        {task.text.toUpperCase()}
+      </Typography>
       <button className={css.btn} onClick={handleDelete}>
-        <MdClose size={14} />
+        <DeleteIcon />
       </button>
     </div>
   );

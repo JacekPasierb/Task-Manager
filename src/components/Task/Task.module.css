@@ -1,8 +1,11 @@
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content:space-between;
   gap: 12px;
   padding: 8px 0;
+  margin-bottom: 10px;
+  background-color: rgba(250, 235, 215, 0.801);
 }
 
 .text {
@@ -13,6 +16,7 @@
 .btn {
   display: flex;
   align-items: center;
+  text-align: right;
   justify-content: center;
   width: 32px;
   height: 32px;
@@ -22,15 +26,17 @@
   border-radius: 4px;
   background-color: transparent;
   cursor: pointer;
-  color: #f44336;
+  color: #080808;
+
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #e2e5e8;
+  background-color: #797777;
 }
 
 .btn:active {
-  background-color: #bdbdbd;
+  background-color: #797777;
 }
 
 .checkbox {

@@ -1,6 +1,7 @@
 import css from "./TaskForm.module.css";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../redux/operations";
+import { Button, TextField } from "@mui/material";
 
 export const TaskForm = () => {
   const dispatch = useDispatch();
@@ -13,14 +14,14 @@ export const TaskForm = () => {
   };
   return (
     <form className={css.form} onSubmit={handleSubmit}>
-      <input
-        className={css.field}
-        type="text"
+      <TextField
+        sx={{ backgroundColor: " rgba(250, 235, 215, 0.801)" }}
         name="text"
+        type="text"
         placeholder="Enter task text..."
-        autoComplete="off"
+        variant="outlined"
       />
-      <button type="submit">Add task</button>
+      <Button variant="contained" color="success" type="submit">Add task</Button>
     </form>
   );
 };
