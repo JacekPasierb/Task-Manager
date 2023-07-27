@@ -67,7 +67,7 @@ export const LoginPage = () => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Log in to Phonebook
+            Log in to Task Manager
           </Typography>
           <Box
             component="form"

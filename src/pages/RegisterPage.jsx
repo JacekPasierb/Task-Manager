@@ -83,7 +83,7 @@ export const RegisterPage = () => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Create your account on Phonebook
+            Create your account on Task Manager
           </Typography>
           <Box
             component="form"
