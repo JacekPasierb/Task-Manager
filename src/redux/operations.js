@@ -43,7 +43,6 @@ export const toggleCompleted = createAsyncThunk(
   "tasks/toggleCompleted",
   async (task, thunkAPI) => {
     try {
-      console.log('ttt',task);
       const response = await axios.patch(`/tasks/${task.id}`, {
         completed: !task.completed,
       });
