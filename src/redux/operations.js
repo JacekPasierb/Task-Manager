@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
+import Notiflix from "notiflix";
 
 
 export const fetchTasks = createAsyncThunk(
@@ -20,8 +20,10 @@ export const addTask = createAsyncThunk(
   async (text, thunkAPI) => {
     try {
       const response = await axios.post("/tasks", { text });
+      Notiflix.Notify.success("Add Task Success");
       return response.data;
     } catch (e) {
+      Notiflix.Notify.failure("Not Add Task");
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -32,8 +34,10 @@ export const deleteTask = createAsyncThunk(
   async (taskId, thunkAPI) => {
     try {
       const response = await axios.delete(`/tasks/${taskId}`);
+      Notiflix.Notify.success("Deleted Task Success");
       return response.data;
     } catch (e) {
+      Notiflix.Notify.failure("Not Deleted Task");
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -46,8 +50,10 @@ export const toggleCompleted = createAsyncThunk(
       const response = await axios.patch(`/tasks/${task.id}`, {
         completed: !task.completed,
       });
+      Notiflix.Notify.success("Change Status Task");
       return response.data;
     } catch (e) {
+      Notiflix.Notify.failure("Not Change Status Task");
       return thunkAPI.rejectWithValue('polo',e.message);
     }
   }
