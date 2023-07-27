@@ -19,6 +19,7 @@ export const AppContainer = () => {
             flexDirection: isTablet ? "row" : "column",
             justifyContent: "center",
             backgroundColor: "lightgreen",
+            padding:"10px",
             
           }}
         >
